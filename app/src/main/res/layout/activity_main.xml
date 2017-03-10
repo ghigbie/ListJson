@@ -4,7 +4,8 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.geogehigbie.listjsonparse.MainActivity">
+    android:background="@color/color_background"
+    tools:context="com.geogehigbie.listjsonparse.activities.MainActivity">
 
     <FrameLayout
         android:id="@+id/fragment_container"
