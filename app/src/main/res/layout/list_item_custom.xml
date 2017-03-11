@@ -12,13 +12,16 @@
 
         <ImageView
             android:id="@+id/list_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="100dp"
+            android:layout_height="75dp"
+            android:layout_weight="1"
+            android:src="@drawable/mailicon"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/button_padding"
+            android:paddingLeft="@dimen/list_item_padding"
+            android:paddingTop="@dimen/list_item_padding_top"
             android:orientation="vertical">
 
                 <TextView
