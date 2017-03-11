@@ -2,12 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_background"
     tools:context="com.geogehigbie.listjsonparse.fragment.ListFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+   <ListView
+       android:id="@+id/contacts_list"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+   </ListView>
 
 </FrameLayout>
