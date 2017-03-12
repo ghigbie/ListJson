@@ -26,7 +26,8 @@ public class ListFragment extends Fragment {
     }
 
     public void createList(){
-        ListView listView = (ListView) findViewById(R.id.l)
+        ListView listView = (ListView) view.findViewById(R.id.contacts_list);
+
 
 
     }
