@@ -1,6 +1,9 @@
 package com.geogehigbie.listjsonparse.activities;
 
 import android.app.ActionBar;
+import android.media.AudioAttributes;
+import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -13,10 +16,14 @@ import com.geogehigbie.listjsonparse.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    private SoundPool soundPool;
+    private int soundClick;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        defineSoundPool();
         centerActionBar();
         setButtonListner();
 
@@ -42,5 +49,22 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.commit();
             }
         });
+    }
+
+    public void defineSoundPool() {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .setUsage(AudioAttributes.USAGE_GAME)
+                    .build();
+
+            soundPool = new SoundPool.Builder()
+                    .setMaxStreams(2)
+                    .setAudioAttributes(audioAttributes)
+                    .build();
+        }
+        soundClick = soundPool.load(this, R.raw.click_on_sound, 1);
+
     }
 }
